@@ -25,7 +25,7 @@
   </title>
 	<?php wp_head(); ?>
 </head>
-<?php var_dump($_COOKIE);?>
+
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
@@ -106,7 +106,7 @@
         </div>
     </div>
  <!-- SEARCH FIELD AREA -->
- <div class="searchfield bg-hed-six" style="background:url('<?php echo get_template_directory_uri(); ?>/images/page-headers/6.jpg')">
+ <div class="searchfield bg-hed-six" style="background:url('<?php echo get_template_directory_uri(); ?>/images/page-headers/11.jpg')">
         <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
             <div class="row text-center margin-bottom-20">
                 <h1 class="white"> Knowledge Base</h1>

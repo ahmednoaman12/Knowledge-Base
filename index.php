@@ -82,7 +82,7 @@ get_header();
 
 
 							</div>
-							<a href="http://localhost/deltahub/all-categories/" class="btn btn-primary ">
+							<a href="http://localhost/deltahub/all-category/" class="btn btn-primary ">
 								<i class="fa fa-align-justify"></i> View All
 							</a>
 							</div>

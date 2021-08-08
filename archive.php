@@ -22,21 +22,10 @@ get_header();
             <!-- ARTICLE OVERVIEW SECTION -->
             <div class="col-md-8 padding-20">
                 <div class="row">
-                    <!-- BREADCRUMBS -->
-                    <div class="breadcrumb-container">
-                        <ol class="breadcrumb">
-                            <li>
-                                <a href="http://localhost/deltahub/">
-                                    <i class="fa fa-home"></i>
-                                </a>
-                            </li>
-                            <li class="active">All Articles</li>
-                        </ol>
-                    </div>
-                    <!-- END BREADCRUMBS -->
+
                     <!-- ARTICLES -->
 
-					<?php
+                    <?php
 
 						if ( is_category() ) {    
 							$title = single_cat_title( '', false );    
@@ -51,10 +40,22 @@ get_header();
 						}
 
 					?>
-
+                    <!-- BREADCRUMBS -->
+                    <div class="breadcrumb-container">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="http://localhost/deltahub/">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="active"> All <?php echo $title ?>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- END BREADCRUMBS -->
                     <div class="fb-heading">
-                        All  <?php echo $title ?>
-                       
+                        All <?php echo $title ?>
+
                     </div>
                     <hr class="style-three">
 
@@ -80,16 +81,26 @@ get_header();
                                     <i class="fa fa-calendar-o"></i> <?php
                                           $post_date = get_the_date( ' j F , Y' ); 
                                           echo $post_date;
-                                          ?>  </a>
+                                          ?> </a>
                             </div>
                             <div class="art-category">
-							<?php $categories = get_the_category(); 
-                                       if ( ! empty( $categories ) ) {?>
-                                    <a href="<?php echo get_category_link($categories[0]->term_id);?>">
+
+                            
+                                <?php //$categories = get_the_category(); 
+                                       //if ( ! empty( $categories ) ) {?>
+                                <!-- <a href="<?php //echo get_category_link($categories[0]->term_id);?>"> -->
+                                    <!-- <i class="fa fa-folder"></i> -->
+                                    <?php
+                                       //	echo esc_html( $categories[0]->name );   
+                                      // } ?> 
+                                       <!-- </a> -->
+
+                                <a href="<?php the_permalink(); ?>">
                                     <i class="fa fa-folder"></i>
-                                        <?php
-                                       	echo esc_html( $categories[0]->name );   
-                                       } ?> </a>
+                                    <?php
+                                       	echo esc_html(  $title );   
+                                        ?> 
+                                </a>
 
 
 
@@ -102,7 +113,7 @@ get_header();
                         </div>
                         <div class="article-content">
                             <p class="block-with-text">
-							<?php  echo  get_the_excerpt(); ?>
+                                <?php  echo  get_the_excerpt(); ?>
                             </p>
                         </div>
                         <div class="article-read-more">
@@ -127,15 +138,15 @@ endif;
                     <nav class="text-center">
                         <ul class="pagination">
                             <li class="disabled">
-                              
-                                    
-                                         <?php echo post_pagination(); ?>
-                                    
-                                        
-                           
+
+
+                                <?php echo post_pagination(); ?>
+
+
+
                             </li>
-                           
-                            
+
+
                         </ul>
                     </nav>
                     <!-- END PAGINATION -->

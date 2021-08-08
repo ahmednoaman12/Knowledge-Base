@@ -68,10 +68,10 @@ get_header();
                                
                                     <?php $categories = get_the_category(); 
                                        if ( ! empty( $categories ) ) {?>
-                                    <a href="<?php echo get_category_link($categories[0]->term_id);?>">
+                                    <a href="<?php echo get_category_link($categories[1]->term_id);?>">
                                     <i class="fa fa-folder"></i>
                                         <?php
-                                       	echo esc_html( $categories[0]->name );   
+                                       	echo esc_html( $categories[1]->name );   
                                        } ?> </a>
                             </div>
                             <div class="art-comments">
