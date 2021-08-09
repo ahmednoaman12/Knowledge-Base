@@ -54,7 +54,7 @@ get_header();
 
                     <div class="fb-heading">
                         All  <?php echo $title ?>
-                       
+                        
                     </div>
                     <hr class="style-three">
 

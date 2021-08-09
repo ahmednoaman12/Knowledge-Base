@@ -25,7 +25,7 @@
   </title>
 	<?php wp_head(); ?>
 </head>
-<?php var_dump($_COOKIE);?>
+
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
