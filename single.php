@@ -50,7 +50,7 @@ get_header();
 					</div>
 					<!-- END BREADCRUMBS -->
 					<!-- ARTICLE  -->
-					<div class="panel panel-default">
+					<div class="panel aaaa">
 						<div class="article-heading margin-bottom-5">
 							<a href="<?php the_permalink(); ?>">
 								<i class="fa fa-pencil-square-o"></i> <?php the_title()?></a>

@@ -26,7 +26,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
             <div class="support-container">
                 <h2 class="support-heading">Need more Support?</h2>
                 If you cannot find an answer in the knowledgebase, you can
-                <a href="#">contact us</a> for further help.
+                <a href="https://alexwebstage.com/delta-scientific-services/contact/">contact us</a> for further help.
             </div>
         </div>
     </div>
@@ -40,40 +40,26 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
             <div class="fat-content-small padding-left-10">
                 <ul>
 
-                    
+
                     <?php
   $popularpost = new WP_Query( array( 'posts_per_page' => 5, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
   while ( $popularpost->have_posts() ) : $popularpost->the_post(); 
  
   ?>
- <li>
+                    <li>
                         <a href="<?php the_permalink(); ?> ">
-                            <i class="fa fa-file-text-o"></i> <?php the_title(); echo '  (' . get_post_meta(get_the_id(),'wpb_post_views_count', true ) . ')' ?></a>
+                            <i class="fa fa-file-text-o"></i>
+                            <?php the_title(); echo '  (' . get_post_meta(get_the_id(),'wpb_post_views_count', true ) . ')' ?></a>
 
-                          
+
                     </li>
-  <?php
+                    <?php
    
   
    
   endwhile; ?>
-                    
-                    <!-- <li>
-                        <a href="#">
-                            <i class="fa fa-file-text-o"></i> How to edit order details?</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-file-text-o"></i> Add new user</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-file-text-o"></i> Change customer details</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-file-text-o"></i> Lookup existing customer in order form</a>
-                    </li> -->
+
+                 
                 </ul>
             </div>
         </div>
@@ -86,30 +72,30 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
             </div>
             <hr class="style-three">
             <div class="fat-content-small padding-left-10">
-               
-                            <?php 
+
+                <?php 
                         // the query
                         $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>5)); ?>
 
-                            <?php if ( $wpb_all_query->have_posts() ) : ?>
+                <?php if ( $wpb_all_query->have_posts() ) : ?>
 
-                            <ul>
+                <ul>
 
-                                <!-- the loop -->
-                                <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-                                <li><a href="<?php the_permalink(); ?>"><i
-                                            class="fa fa-file-text-o"></i><?php the_title(); ?></a></li>
-                                <?php endwhile; ?>
-                                <!-- end of the loop -->
+                    <!-- the loop -->
+                    <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"><i class="fa fa-file-text-o"></i><?php the_title(); ?></a>
+                    </li>
+                    <?php endwhile; ?>
+                    <!-- end of the loop -->
 
-                            </ul>
+                </ul>
 
-                            <?php wp_reset_postdata(); ?>
+                <?php wp_reset_postdata(); ?>
 
-                            <?php else : ?>
-                            <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-                            <?php endif; ?>
-              
+                <?php else : ?>
+                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>

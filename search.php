@@ -43,7 +43,7 @@ get_header();
 
 
 
-                    <div class="panel panel-default">
+                    <div class="panel aaaa">
                         <div class="article-heading-abb">
                             <a href="<?php echo esc_url( post_permalink() ); ?>">
                                 <i class="fa fa-pencil-square-o"></i> Searched Item <?php echo  the_title() ?>

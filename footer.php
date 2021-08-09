@@ -33,24 +33,23 @@
                     <div class="footer-heading">Categories</div>
                     <div class="footer-body">
                         <ul>
+
+                        <?php
+                               $args = array(
+								'orderby' => 'name',
+								'number' => 6
+							 );
+							$categories = get_categories( $args);
+									foreach($categories as $cat) 
+									{
+										
+										?>
                             <li>
-                                <a href="single-category.html">General</a>
+                                <a href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name ?></a>
                             </li>
-                            <li>
-                                <a href="single-category.html">Getting Started</a>
-                            </li>
-                            <li>
-                                <a href="single-category.html">Account Support</a>
-                            </li>
-                            <li>
-                                <a href="single-category.html">Guides</a>
-                            </li>
-                            <li>
-                                <a href="single-category.html">Payment &amp; Billing</a>
-                            </li>
-                            <li>
-                                <a href="single-category.html">Misc</a>
-                            </li>
+                            
+
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -62,24 +61,30 @@
                     <div class="footer-heading">Popular Articles</div>
                     <div class="footer-body">
                         <ul>
-                            <li>
+                            <!-- <li>
                                 <a href="single-article.html">How to change account password</a>
-                            </li>
-                            <li>
-                                <a href="single-article.html">How to edit order details</a>
-                            </li>
-                            <li>
-                                <a href="single-article.html">Add new user</a>
-                            </li>
-                            <li>
-                                <a href="single-article.html">Change customer details</a>
-                            </li>
-                            <li>
-                                <a href="single-article.html">Lookup existing customer in order form</a>
-                            </li>
-                            <li>
-                                <a href="single-article.html">How do I reset my password</a>
-                            </li>
+                            </li> -->
+                        
+
+
+
+                            <?php
+  $popularpost = new WP_Query( array( 'posts_per_page' => 6, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+  while ( $popularpost->have_posts() ) : $popularpost->the_post(); 
+ 
+  ?>
+                    <li>
+                        <a href="<?php the_permalink(); ?> ">
+                            <?php the_title(); echo '  (' . get_post_meta(get_the_id(),'wpb_post_views_count', true ) . ')' ?>
+                        </a>
+
+
+                    </li>
+                    <?php
+   
+  
+   
+  endwhile; ?>
                         </ul>
                     </div>
                 </div>
@@ -92,12 +97,19 @@
     <div class="container-fluid footer-copyright marg30">
         <div class="container">
             <div class="pull-left">
-                Copyright © 2018 Sunny Gohil</a>
+                Copyright © 2021 <a href="https://alexwebdesign.com/"> AlexWeb</a>
             </div>
             <div class="pull-right">
-                <i class="fa fa-facebook"></i> &nbsp;
-                <i class="fa fa-twitter"></i> &nbsp;
-                <i class="fa fa-linkedin"></i>
+               <a href="https://www.facebook.com/delta.scientific.35">
+
+                   <i class="fa fa-facebook"></i> &nbsp;
+               </a> 
+                <a href="https://twitter.com/bold_themes">
+                    <i class="fa fa-twitter"></i> &nbsp;
+                </a>
+                <a href="">
+                    <i class="fa fa-linkedin"></i>
+                </a> 
             </div>
         </div>
     </div>

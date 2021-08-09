@@ -482,10 +482,10 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
+/* ul,
 ol {
 	margin: 0 0 1.5em 3em;
-}
+} */
 
 ul {
 	list-style: disc;
@@ -516,9 +516,10 @@ object {
 	max-width: 100%;
 }
 
-img {
+.loogo img {
 	height: auto;
 	max-width: 100%;
+	margin-left: 20px;
 }
 
 figure {
@@ -537,7 +538,7 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: none;
 }
 
 a:hover,
@@ -1016,8 +1017,8 @@ a:hover {
 	margin-right: auto;
 }
 .logo img {
-	max-width: 100%;
-	padding-top: 5px;
+	max-width: 220px;
+    padding-top: 6px;
 }
 
 /* NAVIGATION */
@@ -1031,10 +1032,17 @@ a:hover {
 ul.topnav {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+    padding: 42px;
 	overflow: hidden;
-	background-color: #26303a;
+	background-color: #ffffff;
+	/* background-color: #26303a; */
 	text-align: center;
+}
+
+@media screen and (min-width:992px) {
+	ul.topnav {
+		padding: 25px 382px 25px 0;
+	}
 }
 /* Float the list items side by side */
 ul.topnav li {
@@ -1043,13 +1051,14 @@ ul.topnav li {
 /* Style the links inside the list items */
 ul.topnav li a {
 	display: inline-block;
-	color: #ffffff;
+	color: #26303a;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	transition: 0.4s;
-	font-size: 17px;
-	border-bottom: 1px solid #323f4c;
+	font-size: 22px;
+	font-weight: 600;
+	
 }
 /* Style the font awesome icons inside links */
 ul.topnav li i {
@@ -1058,15 +1067,17 @@ ul.topnav li i {
 }
 /* Change background color of links on hover */
 ul.topnav li a:hover {
-	background-color: #223953;
+	/* background-color: #223953; */
+	border-bottom: 1px solid #323f4c;
+	transition:0.1s ;
 }
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {display: none;}
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
+  /* ul.topnav li:not(:first-child) {display: none;} */
   ul.topnav li.icon {
-    float: right;
+    /* float: right; */
     display: inline-block;
   }
 }
@@ -1160,7 +1171,7 @@ input.search {
 	list-style-image: url('images/listarrow.png');
 	list-style-position: inside;
 	padding: 4px 5px 8px 20px;
-	border-bottom: 1px solid #134989;
+	border-bottom: 1px solid #1349894f;
 	text-indent: -0.8em;
 }
 .footer-body ul li:last-child {
@@ -1274,7 +1285,7 @@ input.search {
   /* background-image: url('/images/page-headers/5.jpg'); */
   background-size: 100% auto;
   background-repeat: repeat-y;
-  height: 100%;
+  height: 467px;
   color: #ffffff !important;
   /* display: none !important; */
 }
@@ -1627,7 +1638,7 @@ hr.style-two {
 hr.style-three {
 	border: 0;
 	height: 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	/* border-top: 1px solid rgba(0, 0, 0, 0.1); */
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 hr.style-transparent {
@@ -1655,7 +1666,7 @@ h2.support-heading {
 }
 .login-box {
 	display: inline-block;
-	float: right;
+	/* float: right; */
 	padding: 7px 15px 7px 15px;
 }
 .login-box:hover {
@@ -1804,7 +1815,7 @@ h2.support-heading {
 	height: 70px;
 	border-radius: 50%;
 	display: inline-block;
-	float: left;
+	/* float: left; */
 	border: 1px solid #f3f3f3;
 	padding: 5px;
 }
@@ -1892,16 +1903,24 @@ form.comment-form button {
 .breadcrumb-container {
 	margin: 0px 0px 20px 0px;
 }
+
 .breadcrumb li a {
 	color: #222222;
 	font-weight: bold;
+	margin-left: 5px !important;
+	font-size: 15px;
+}
+.breadcrumb li{
+	font-size: 15px;
 }
 .breadcrumb li a:hover {
 	color: #155469;
 	text-decoration: none;
 }
 
-
+.breadcrumb {
+    padding: 16px 0px !important;
+}
 
 ul{
 list-style: none;
@@ -1926,7 +1945,7 @@ list-style: none;
 .results{
 	/* display: none; */
     position: absolute;
-    top: 338px;
+    top: 374px;
 	width:499px;
     left: 498px;
     right: 0;
